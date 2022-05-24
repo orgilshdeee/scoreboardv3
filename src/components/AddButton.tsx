@@ -17,7 +17,7 @@ export function AddButton(Props: Props): JSX.Element {
     setShow(false);
   };
   return (
-    <>
+    <div style={{ backgroundColor: "blueviolet" }}>
       <Button onClick={handleShow}>Add Student</Button>
       <Modal
         show={show}
@@ -44,21 +44,6 @@ export function AddButton(Props: Props): JSX.Element {
           </Form>
         </Modal.Body>
       </Modal>
-      {/* <form className="mt-5 d-flex justify-content-around">
-        <label>
-          Player Name:
-          <input type="text" name="getName" />
-        </label>
-        <label>
-          Player Score:
-          <input type="number" name="getScore" />
-        </label>
-        <div>
-          <button type="submit" onClick={handleSubmit}>
-            Add player
-          </button>
-        </div>
-      </form> */}
-    </>
+    </div>
   );
 }

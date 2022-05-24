@@ -28,7 +28,13 @@ function App(): JSX.Element {
     );
   }
   return (
-    <div className="container">
+    <div
+      className="container mt-5 p-0"
+      style={{
+        border: "1px solid black",
+        borderRadius: "15px",
+      }}
+    >
       <Header totalPlayers={players?.length} />
       {players?.map((player: Player, i: number) => {
         return (

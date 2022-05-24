@@ -1,3 +1,7 @@
+import { type } from "os";
+import { useState } from "react";
+import { Score } from "./Score";
+
 interface Props {
   playerInfo: {
     name: string;
@@ -7,12 +11,17 @@ interface Props {
   deleteStudent: (e: any) => void;
 }
 
-export function Player(Props: Props): JSX.Element {
+export function Player(Props: Props) {
+  const [score, setScore] = useState<number | undefined>(
+    Props.playerInfo?.score
+  );
+
   return (
-    <div className="container" style={{ border: "solid 1px black" }}>
+    <div className="" style={{ borderBottom: "1px solid black" }}>
       <div className="d-flex justify-content-around">
         <p>{Props.playerInfo?.name}</p>
-        <p>{Props.playerInfo?.score}</p>
+        <Score score={score} setScore={setScore} />
+        {/* <p>{Props.playerInfo?.score}</p> */}
         <button onClick={() => Props.deleteStudent(Props.playerInfo?.name)}>
           remove
         </button>
